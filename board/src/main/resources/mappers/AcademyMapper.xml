@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.board.mapper.AcademyMapper">
+		<!-- 게시물 목록 -->
+	<update id="updateAcademyList" parameterType="hashMap">
+		INSERT INTO TB_ACADEMY(
+			ACADEMY_ID,
+			ACADEMY_NM
+		)VALUES(
+			#{ACADEMY_ID},
+			#{ACADEMY_NM}
+		)
+		ON DUPLICATE KEY UPDATE
+			ACADEMY_NM = #{ACADEMY_NM}
+	</update>
+</mapper>
